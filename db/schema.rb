@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_134700) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_143408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arguments", force: :cascade do |t|
+    t.string "argument_name"
+    t.bigint "option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_arguments_on_option_id"
+  end
+
+  create_table "decisions", force: :cascade do |t|
+    t.string "decision_name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_decisions_on_user_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "option_name"
+    t.bigint "decision_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decision_id"], name: "index_options_on_decision_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_134700) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "arguments", "options"
+  add_foreign_key "decisions", "users"
+  add_foreign_key "options", "decisions"
 end
