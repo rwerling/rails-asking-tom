@@ -1,5 +1,5 @@
 <% @decisions.reverse_each do |decision| %>
-<p> Decision: <%= decision.decision_name %> </p>
+<p><%= link_to decision.decision_name, decision_path(decision) %></p>
 <% end %>
 
 <%= link_to "New Decision", new_decision_path, class: 'btn btn-primary' %>
