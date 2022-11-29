@@ -6,13 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
+# -------
 # create users
-# User.create(email: "ray@mail.com", password: "123456").save
-# User.create(email: "lisa@mail.com", password: "123456").save
-# User.create(email: "sabrina@mail.com", password: "123456").save
-# User.create(email: "xiomara@mail.com", password: "123456").save
+User.create(email: "ray@mail.com", password: "123456").save
+User.create(email: "lisa@mail.com", password: "123456").save
+User.create(email: "sabrina@mail.com", password: "123456").save
+User.create(email: "xiomara@mail.com", password: "123456").save
 
+# -------
 # create decision and assign them to users
 Decision.create(decision_name: "Summer Hollidays 2023", user_id: 1).save
 Decision.create(decision_name: "Christmas gift for mum", user_id: 2).save
