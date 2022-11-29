@@ -13,14 +13,17 @@ class DecisionsController < ApplicationController
 
   def create
     @decision = Decision.new(decision_params)
-    @decision.save
-    redirect_to option_path
+    if @decision.save
+      redirect_to decision_path(@decision)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @decision = Decision.find(params[:id])
     @decision.destroy
-    redirect_to decision_path, status: :see_other
+    redirect_to decisions_path, status: :see_other
   end
 
   private 
