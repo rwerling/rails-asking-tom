@@ -5,3 +5,4 @@
 </ul>
 <% end %>
 <p> <%= link_to "New Option", new_decision_option_path(@decision), class: 'btn btn-primary' %> </p>
+<p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
