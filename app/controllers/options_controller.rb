@@ -1,6 +1,6 @@
 class OptionsController < ApplicationController
   # def index
-  #   @options = Option.all
+  # @options = Option.all
   # end
 
   def new
@@ -19,9 +19,9 @@ class OptionsController < ApplicationController
     end
   end
 
-  # def show
-  #   @option = Option.find(params[:id])
-  # end
+   def show
+   @option = Option.find(params[:id])
+   end
 
 private
 
