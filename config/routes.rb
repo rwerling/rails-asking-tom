@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       resources :arguments, only: [:new, :create]
     end
   end
+  resources :arguments, only: [:destroy]
 end
