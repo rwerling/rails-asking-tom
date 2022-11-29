@@ -13,8 +13,9 @@ class DecisionsController < ApplicationController
 
   def create
     @decision = Decision.new(decision_params)
+    @decision.user_id = current_user.id
     if @decision.save
-      redirect_to decision_path(@decision)
+      redirect_to decisions_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +27,7 @@ class DecisionsController < ApplicationController
     redirect_to decisions_path, status: :see_other
   end
 
-  private 
+  private
 
   def decision_params
     params.require(:decision).permit(:decision_name)
