@@ -1,1 +1,82 @@
-// Specific CSS for your home-page
+body {
+  background: linear-gradient(180deg, #E8F7FF 0%, #85B4DD 100%);
+  mix-blend-mode: normal;
+}
+
+.welcome-block {
+  margin: 278px 39px;
+  width: 296px;
+  height: 216px;
+}
+
+.ask-button {
+  margin: 180px 0 0 90px;
+  width: 133px;
+  height: 48px;
+  background: #103146;
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.ask-button a {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.welcome-text {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 120%;
+  color: #1F4E84;
+}
+
+.explanation {
+  margin: 340px 31px 70px 45px;
+  padding-top: 45px;
+}
+
+.explanation-style {
+  height: 100vh;
+  background: #FCF7E9;
+}
+
+.explanation p {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  color: #103146;
+}
+
+.explanation .steps {
+  color: #1F4E84;
+}
+
+.start-button {
+  margin-left: 75px;
+  width: 149px;
+  height: 47px;
+  background: #1F4E84;
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.start-button a {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 120%;
+  text-decoration: none;
+  color: #FFFFFF;
+}
