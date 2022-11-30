@@ -30,8 +30,14 @@ decision1.save
 option1 = Option.new(option_name: "Barcelona")
 option1.decision = decision1
 option1.save
-# Option.create(option_name: "London", decision_id: 1).save
-# Option.create(option_name: "Oslo", decision_id: 1).save
+
+option2 = Option.new(option_name: "London")
+option2.decision = decision1
+option2.save
+
+option3 = Option.new(option_name: "Oslo")
+option3.decision = decision1
+option3.save
 
 # # create options and assign them to decision "Christmas gift mum"
 # Option.create(option_name: "Gloves", decision_id: 2).save
@@ -53,19 +59,44 @@ option1.save
 argument1 = Argument.new(argument_name: "good weather", score: 5)
 argument1.option = option1
 argument1.save
-# Argument.create(option_id: 1, argument_name: "cheap flight", score: 4)
-# Argument.create(option_id: 1, argument_name: "too many tourists", score: 1)
+
+argument2 = Argument.new(argument_name: "cheap flight", score: 5)
+argument2.option = option1
+argument2.save
+
+argument3 = Argument.new(argument_name: "too many tourists", score: 5)
+argument3.option = option1
+argument3.save
 
 # # create arguments and assign them to option "london"
-# Argument.create(option_id: 2, argument_name: "good weather", score: 5)
-# Argument.create(option_id: 2, argument_name: "cheap flight", score: 4)
-# Argument.create(option_id: 2, argument_name: "too many tourists", score: 1)
+argument4 = Argument.new(argument_name: "bad weather", score: 1)
+argument4.option = option2
+argument4.save
+
+argument5 = Argument.new(argument_name: "very expensive", score: 2)
+argument5.option = option2
+argument5.save
+
+argument6 = Argument.new(argument_name: "I speak English", score: 5)
+argument6.option = option2
+argument6.save
 
 # # create arguments and assign them to option "oslo"
-# Argument.create(option_id: 3, argument_name: "bad weather", score: 2)
-# Argument.create(option_id: 3, argument_name: "great landscape around", score: 5)
-# Argument.create(option_id: 3, argument_name: "not too many tourists", score: 3)
-# Argument.create(option_id: 3, argument_name: "I don't speak any Norwegian", score: 2)
+argument7 = Argument.new(argument_name: "bad weather", score: 2)
+argument7.option = option3
+argument7.save
+
+argument8 = Argument.new(argument_name: "great landscape around", score: 5)
+argument8.option = option3
+argument8.save
+
+argument9 = Argument.new(argument_name: "crazy expensive", score: 1)
+argument9.option = option3
+argument9.save
+
+argument10 = Argument.new(argument_name: "I don't speak Norwegian", score: 2)
+argument10.option = option3
+argument10.save
 
 # # -------
 # # create arguments and assign them to option "Gloves"

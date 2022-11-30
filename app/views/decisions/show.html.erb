@@ -1,8 +1,15 @@
 <p> <%= @decision.decision_name %> </p>
-<% @decision.options.reverse_each do |option| %>
-<ul> 
-<li> <%= option.option_name %> </li>
+<% @decision.options.each do |option| %>
+<ul>
+  <li> <%= link_to option.option_name %> </li>
+    <% option.arguments.each do |argument| %>
+      <ul>
+        <li><%= argument.argument_name %> – score: <%= argument.score %></li>
+      </ul>
+    <% end %>
 </ul>
+
 <% end %>
-<p> <%= link_to "New Option", new_decision_option_path(@decision), class: 'btn btn-primary' %> </p>
+<p><%= link_to "New Option", new_decision_option_path(@decision), class: 'btn btn-primary' %> </p>
 <p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
+<p><%= link_to 'Back to all decisions', decisions_path %></small></p>
