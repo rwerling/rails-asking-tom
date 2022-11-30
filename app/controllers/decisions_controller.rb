@@ -38,7 +38,6 @@ class DecisionsController < ApplicationController
       end
       total
     end
-    
   end
 
   private
