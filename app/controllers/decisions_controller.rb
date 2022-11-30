@@ -5,6 +5,7 @@ class DecisionsController < ApplicationController
 
   def show
     @decision = Decision.find(params[:id])
+    @option = Option.new
   end
 
   def new
@@ -14,8 +15,9 @@ class DecisionsController < ApplicationController
   def create
     @decision = Decision.new(decision_params)
     @decision.user_id = current_user.id
+    # raise
     if @decision.save
-      redirect_to decisions_path
+      redirect_to decision_path(@decision)
     else
       render :new, status: :unprocessable_entity
     end
