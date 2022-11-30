@@ -1,7 +1,11 @@
-<nav class="navbar fixed-bottom bg-light">
-  <div class="container-fluid">
-    <%= link_to decisions_path, class: "navbar-brand" do %>
-    <p>Ask Tom!</p>
-    <% end %>
-  </div>
-</nav>
+<div class="burger-menu">
+  <input id="menu-toggle" type="checkbox" />
+  <label class="menu-btn" for="menu-toggle">
+    <span></span>
+  </label>
+
+  <ul class="menubox">
+          <li> <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %> </li>
+          <li> <%= link_to "Login", new_user_session_path %> </li>
+  </ul>
+</div>
