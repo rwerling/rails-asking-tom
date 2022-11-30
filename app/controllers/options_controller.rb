@@ -19,9 +19,9 @@ class OptionsController < ApplicationController
     end
   end
 
-   def show
-   @option = Option.find(params[:id])
-   end
+  def show
+    @option = Option.find(params[:id])
+  end
 
 private
 
