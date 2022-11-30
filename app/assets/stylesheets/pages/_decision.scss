@@ -1,0 +1,42 @@
+body {
+  width: 100%;
+  height: 844px;
+}
+
+.step-info .step-choices {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 120%;
+  color: #1F4E84;
+}
+
+.step-info p {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 120%;
+  color: #103146;
+}
+
+.add-decision {
+  width: 100%;
+  height: 80vh;
+  background: #FCF7E9;
+  border-radius: 90px 90px 0px 0px;
+  
+}
+
+.step-info {
+  margin: 77px 31px 0 34px;
+}
+
+.decision {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
