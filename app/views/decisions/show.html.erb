@@ -1,7 +1,7 @@
 <p> <%= @decision.decision_name %> </p>
 <% @decision.options.reverse_each do |option| %>
-<ul> 
-<li> <%= option.option_name %> </li>
+<ul>
+<li> <%= link_to option.option_name, option_path(option) %> </li>
 </ul>
 <% end %>
 <p> <%= link_to "New Option", new_decision_option_path(@decision), class: 'btn btn-primary' %> </p>

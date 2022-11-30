@@ -9,12 +9,11 @@ class ArgumentsController < ApplicationController
   end
 
   def create
-    @decision = Decision.find(params[:decision_id])
     @option = Option.find(params[:option_id])
     @argument = Argument.new(argument_params)
     @argument.option = @option
     if @argument.save
-      redirect_to decision_path(@decision)
+      redirect_to option_path(@option)
     else
       render :new, status: :unprocessable_entity
     end
