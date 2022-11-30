@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :decisions do
     resources :options, only: [:new, :create]
   end
-  resources :options, only: [:show] do
+  resources :options, only: [:show, :destroy] do
     resources :arguments, only: [:new, :create]
   end
   resources :arguments, only: [:show, :destroy]

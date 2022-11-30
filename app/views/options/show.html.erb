@@ -1,2 +1,21 @@
 <%= @option.option_name %>
-<%= link_to 'Make Argument', new_option_argument_path(@option)%>
+<%# <%= link_to 'Make Argument', new_option_argument_path(@option)%>
+
+<div>
+  <% @option.arguments.each do |argument| %>
+    <ul>
+      <li><%= argument.argument_name %> <%= argument.score %></li>
+    </ul>
+  <% end %>
+</div>
+
+<div>
+  <%= simple_form_for [@option, @argument] do |f| %>
+    <%= f.input :argument_name %>
+    <%= f.input :score %>
+    <%= f.submit "Add argument", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<p><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
+<p><%= link_to 'Back to', :back %></small></p>

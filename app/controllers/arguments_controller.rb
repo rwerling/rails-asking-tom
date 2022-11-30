@@ -28,6 +28,6 @@ class ArgumentsController < ApplicationController
   private
 
   def argument_params
-    params.require(:argument).permit(:argument_name)
+    params.require(:argument).permit(:argument_name, :score)
   end
 end

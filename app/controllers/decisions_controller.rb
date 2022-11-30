@@ -29,6 +29,18 @@ class DecisionsController < ApplicationController
     redirect_to decisions_path, status: :see_other
   end
 
+  def decide
+    @decision = Decision.find(params[:id])
+    scores = @decisions.options.map do |option|
+      total = 0
+      option.arguments.each do |argument|
+        total += argument.score
+      end
+      total
+    end
+    
+  end
+
   private
 
   def decision_params

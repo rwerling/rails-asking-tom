@@ -21,6 +21,14 @@ class OptionsController < ApplicationController
 
   def show
     @option = Option.find(params[:id])
+    @argument = Argument.new
+  end
+
+  def destroy
+    @option = Option.find(params[:id])
+    @decision = @option.decision
+    @option.destroy
+    redirect_to decision_path(@decision), status: :see_other
   end
 
 private
@@ -28,4 +36,5 @@ private
   def option_params
     params.require(:option).permit(:option_name)
   end
+
 end
