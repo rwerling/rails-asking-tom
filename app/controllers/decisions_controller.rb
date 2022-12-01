@@ -31,13 +31,7 @@ class DecisionsController < ApplicationController
 
   def decide
     @decision = Decision.find(params[:id])
-    scores = @decisions.options.map do |option|
-      total = 0
-      option.arguments.each do |argument|
-        total += argument.score
-      end
-      total
-    end
+    @winner = @decision.options.sample
   end
 
   private

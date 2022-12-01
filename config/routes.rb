@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :decisions do
+    member do
+      get 'decide'
+    end
     resources :options, only: [:new, :create]
   end
   resources :options, only: [:show, :destroy] do
