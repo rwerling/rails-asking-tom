@@ -18,6 +18,6 @@
   <% end %>
 </div>
 <%=@next_option%>
-<p><%= link_to 'Next', option_path(@option) %></p>
+<%# <p><%= link_to 'Next', option_path(@option) %></p> %>
 <p><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
 <p><%= link_to 'Back to', :back %></small></p>
