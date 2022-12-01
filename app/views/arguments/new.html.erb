@@ -1,4 +1,1 @@
-<%= simple_form_for [@option, @argument] do |f| %>
-  <%= f.input :argument_name %>
-  <%= f.submit "Submit argument", class: "btn btn-primary" %>
-<% end %>
+render 'form', option: @option, argument: @argument

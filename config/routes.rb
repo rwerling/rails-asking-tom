@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :decisions do
     resources :options, only: [:new, :create]
+    member do
+      get 'decide'
+    end
   end
   resources :options, only: [:show, :destroy] do
     resources :arguments, only: [:new, :create]

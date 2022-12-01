@@ -1,0 +1,8 @@
+hello
+<% @options.each do |option|%>
+  <%   option.arguments.each do |argument| %>
+    <%= option.option_name %>:
+    <%= argument.argument_name %>
+
+  <% end %>
+<% end %>
