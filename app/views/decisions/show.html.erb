@@ -18,6 +18,9 @@
   <%= f.submit "Add option", class: "btn btn-primary" %>
 <% end %>
 
-<p><%= link_to 'Next', option_path(@decision.options.first) %></p>
+
+<% if @decision.options.first  %>
+  <p><%= link_to 'Next', ask_decision_option_path(@decision, @decision.options.first) %></p>
+<% end %>
 <p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
 <p><%= link_to 'Back to all decisions', decisions_path %></small></p>

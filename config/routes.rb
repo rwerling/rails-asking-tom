@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     member do
       get 'decide'
     end
-    resources :options, only: [:new, :create]
+    resources :options, only: [:new, :create] do
+      member do
+        get 'ask'
+        get 'score'
+      end
+    end
   end
   resources :options, only: [:show, :destroy] do
     resources :arguments, only: [:new, :create]
