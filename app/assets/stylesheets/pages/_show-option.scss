@@ -1,0 +1,90 @@
+.container {
+  width: 100%;
+  height: 80vh;
+  background: #FCF7E9;
+  border-radius: 90px 90px 0px 0px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+}
+
+.step-2 h2 {
+  margin-top: 70px;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 120%;
+  color: #1F4E84;
+}
+
+.step-2 p {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 120%;
+  color: #103146;
+}
+
+.input {
+  padding-top: 74px;
+}
+
+.step-2 {
+  margin-left: 20px;
+}
+
+.mood-button {
+    opacity: 0.5;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.mood-buttons {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 24px;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.show-buttons {
+  margin-top: 30px;
+  width: 92px;
+  height: 47px;
+  background: #1F4E84;
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px 24px;
+}
+
+.show-buttons a {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 120%;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
