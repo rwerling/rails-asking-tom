@@ -1,5 +1,5 @@
 <div class="step-2">
-  <h2>Step 2 
+  <h2>Step 2
   <br>Pros & Cons</h2>
   <br>
   <p>What are the positives and negatives aspects about <%= @option.option_name %>? <br>How does aspects makes you feel?</p>
@@ -20,7 +20,8 @@
     <div>
       <%= simple_form_for [@option, @argument] do |f| %>
         <%= f.input :argument_name, label: 'description' %>
-        <%= f.submit "Add", class: "btn btn-primary" %>
+        <%= f.input :score, label: 'score (very negative: -2, very positive +2)' %>
+        <%= f.submit "Add argument", class: "btn btn-primary" %>
       <% end %>
     </div>
 
@@ -30,12 +31,12 @@
       <button class="mood-button">🙂</button>
       <button class="mood-button">😀</button>
     </div>
-    
+
     <div class="buttons">
       <%=@next_option%>
-      <p class="show-buttons"><%= link_to 'Back', :back %></p>
-      <p class="show-buttons"><%= link_to 'Next', option_path(@option)%></p>
-    </div>
+      <%# <p><%= link_to 'Next', option_path(@option) %></p> %>
+      <p class="show-buttons"><%= link_to 'Back to', :back %></small></p>
+      <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
     </div>
   </div>
 </div>

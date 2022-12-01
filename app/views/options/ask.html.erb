@@ -1,0 +1,15 @@
+<h1><%= @decision.decision_name %></h1>
+<form action='/decisions/<%= @decision.id %>/options/<%= @option.id %>/score'>
+    <% @options.each do |option| %>
+      <% option.arguments.each do |argument| %>
+        <p>does <%= @option.option_name %> result in <%= argument.argument_name %></p>
+        <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="1">
+        <label for="argument<%= argument.id %>"> Yes </label><br>
+        <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="-1">
+        <label for="argument<%= argument.id %>"> No </label><br>
+        <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="0">
+        <label for="argument<%= argument.id %>"> Maybe </label><br>
+      <% end %>
+    <% end %>
+  <input type="submit" value="Submit">
+</form>
