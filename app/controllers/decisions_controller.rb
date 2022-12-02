@@ -31,7 +31,7 @@ class DecisionsController < ApplicationController
 
   def decide
     @decision = Decision.find(params[:id])
-    @winner = @decision.options.sample
+    @winner = @decision.options.max { |a, b| a.score <=> b.score }
   end
 
   private

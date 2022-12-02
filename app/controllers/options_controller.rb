@@ -22,6 +22,7 @@ class OptionsController < ApplicationController
   def show
     @option = Option.find(params[:id])
     @argument = Argument.new
+
   end
 
   def destroy
@@ -31,7 +32,32 @@ class OptionsController < ApplicationController
     redirect_to decision_path(@decision), status: :see_other
   end
 
-private
+  def ask
+    @decision = Decision.find(params[:decision_id])
+    @option = Option.find(params[:id])
+    @options = Option.where(decision: @decision).where.not(id: @option)
+  end
+
+  def score
+    @decision = Decision.find(params[:decision_id])
+    @options = @decision.options
+    @option = Option.find(params[:id])
+    total = 0
+    scores = params.select { |param| param.include?('argument') }
+    scores.each_value { |score| total += score.to_i }
+    @option.arguments.each { |argument| total += argument.score }
+    @option.score = total
+    @option.save
+    next_index = @options.index(@option) + 1
+    if @options.length > next_index
+      next_option = @options[next_index]
+      redirect_to ask_decision_option_path(@decision, next_option)
+    else
+      redirect_to decide_decision_path(@decision)
+    end
+  end
+
+  private
 
   def option_params
     params.require(:option).permit(:option_name)
