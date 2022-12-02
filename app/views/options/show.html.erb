@@ -2,7 +2,7 @@
   <h2>Step 2
   <br>Pros & Cons</h2>
   <br>
-  <p>What are the positives and negatives aspects about <%= @option.option_name %>? <br>How does aspects makes you feel?</p>
+  <p>What are the positives and negatives aspects about <strong><%= @option.option_name %></strong>? <br>How does aspects makes you feel?</p>
 </div>
 <%# <%= link_to 'Make Argument', new_option_argument_path(@option)%>
 
@@ -15,22 +15,22 @@
             <li><%= argument.argument_name %> <%= argument.score %></li>
           </ul>
         <% end %>
-    </div>
+      </div>
 
-    <div>
-      <%= simple_form_for [@option, @argument] do |f| %>
-        <%= f.input :argument_name, label: 'description' %>
-        <%= f.input :score, label: 'score (very negative: -2, very positive +2)' %>
-        <%= f.submit "Add argument", class: "btn btn-primary" %>
-      <% end %>
-    </div>
+      <div>
+        <%= simple_form_for [@option, @argument] do |f| %>
+          <%= f.input :argument_name, label: 'description' %>
+          <%= f.input :score, label: 'score (very negative: -2, very positive +2)' %>
+          <%= f.submit "Add argument", class: "btn btn-primary" %>
+        <% end %>
+      </div>
 
-    <div class="mood-buttons">
-      <button class="mood-button">😢</button>
-      <button class="mood-button">🙁</button>
-      <button class="mood-button">🙂</button>
-      <button class="mood-button">😀</button>
-    </div>
+      <div class="mood-buttons">
+        <button class="mood-button">😢</button>
+        <button class="mood-button">🙁</button>
+        <button class="mood-button">🙂</button>
+        <button class="mood-button">😀</button>
+      </div>
 
     <div class="buttons">
       <p class="show-buttons"><%= link_to 'Back', :back %></small></p>
