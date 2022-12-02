@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card">
+  <div class="mytable card">
     <h1>And The Winner Is !!!</h1>
     <h2><%= @decision.decision_name %></h2>
     <p><%= @winner.option_name %></p>
@@ -18,8 +18,8 @@
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Mark</td>
-          <td>10</td>
+          <td><%= @winner.option_name %></td>
+          <td><%= @winner.score %></td>
 
         </tr>
         <tr>
@@ -37,11 +37,8 @@
     </table>
   </div>
 
-  <div class="card_one">
-    <button type="button" class="btn btn-outline-success">Congratulations</button>
-  </div>
+
+  <button type="button" class="btn btn-outline-success">Congratulations</button>
+
 
 </div>
-<h1><%= @decision.decision_name %></h1>
-<h2><%= @winner.option_name %></h2>
-<p><%= @winner.score %></p>
