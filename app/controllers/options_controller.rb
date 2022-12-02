@@ -22,7 +22,9 @@ class OptionsController < ApplicationController
   def show
     @option = Option.find(params[:id])
     @argument = Argument.new
-
+    @options = @option.decision.options.order(:id)
+    next_index = @options.index(@option) + 1
+    @next_option = @options[next_index]
   end
 
   def destroy
@@ -40,12 +42,12 @@ class OptionsController < ApplicationController
 
   def score
     @decision = Decision.find(params[:decision_id])
-    @options = @decision.options
+    @options = @decision.options.order(:id)
     @option = Option.find(params[:id])
     total = 0
     scores = params.select { |param| param.include?('argument') }
     scores.each_value { |score| total += score.to_i }
-    @option.arguments.each { |argument| total += argument.score }
+    @option.arguments.each { |argument| total += argument.score || 0 }
     @option.score = total
     @option.save
     next_index = @options.index(@option) + 1

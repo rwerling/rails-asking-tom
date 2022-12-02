@@ -1,4 +1,14 @@
-<%= simple_form_for [@decision] do |f| %>
-  <%= f.input :decision_name %>
-  <%= f.submit "Save new decision", class: "btn btn-primary" %>
-<% end %>
+<div class="decision-page">
+  <div class="decision-text-block">
+    <p class="decision-title">
+    What’s going on? <br></p>
+    <p class="decision-text">What is the desicion that needs to be made?</p>
+  </div>
+  
+  <div class="create-decision">
+    <%= simple_form_for [@decision] do |f| %>
+      <%= f.input :decision_name %>
+      <%= f.submit "Save new decision", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

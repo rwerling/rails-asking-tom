@@ -1,23 +1,24 @@
-<%# <p> <%= @decision.decision_name %> </p>
 <div class="step-options">
-<h2>Step 1 <br>Options</h2>
-<p>What are you deciding between? Please add min 2 options </p>
+  <h2>Step 1 <br>Options</h2>
+  <p>What are you deciding between? Please add min 2 options </p>
 </div>
 
 <div class="option">
   <div class="create-option">
-  <% @decision.options.each do |option| %>
-    <div>
-      <ul>
-        <li> <%= link_to option.option_name, option_path(option) %> </li>
-          <% option.arguments.each do |argument| %>
-            <ul>
-              <li><%= argument.argument_name %> <%= argument.emoji %></li>
-            </ul>
-          <% end %>
-      </ul>
-  <% end %>
+    <% @decision.options.each do |option| %>
+      <div>
+        <ul>
+          <li> <%= link_to option.option_name, option_path(option) %> </li>
+            <% option.arguments.each do |argument| %>
+              <ul>
+                <li><%= argument.argument_name %> <%= argument.emoji %></li>
+              </ul>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
+</div>
 
 <%= simple_form_for [@decision, @option] do |f| %>
   <%= f.input :option_name, label: 'Add option:', class: "my-awesome-css-class" %>
