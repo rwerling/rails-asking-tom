@@ -15,7 +15,7 @@ class ArgumentsController < ApplicationController
     if @argument.save
       redirect_to option_path(@option)
     else
-      render :new, status: :unprocessable_entity
+      render 'options/show', status: :unprocessable_entity
     end
   end
 

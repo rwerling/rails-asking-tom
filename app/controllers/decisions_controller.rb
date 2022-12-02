@@ -15,7 +15,6 @@ class DecisionsController < ApplicationController
   def create
     @decision = Decision.new(decision_params)
     @decision.user_id = current_user.id
-    # raise
     if @decision.save
       redirect_to decision_path(@decision)
     else

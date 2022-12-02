@@ -1,38 +1,35 @@
-<%# <p> <%= @decision.decision_name %> </p>
-<div class="step1-page">
-  <div class="step-options">
-    <h2>Step 1 <br>Options</h2>
-    <p>What are you deciding between? Please add min 2 options </p>
-  </div>
+<div class="step-options">
+  <h2>Step 1 <br>Options</h2>
+  <p>What are you deciding between? Please add min 2 options </p>
+</div>
 
-  <div class="option">
-    <div class="create-option">
+<div class="option">
+  <div class="create-option">
     <% @decision.options.each do |option| %>
       <div>
         <ul>
           <li> <%= link_to option.option_name, option_path(option) %> </li>
             <% option.arguments.each do |argument| %>
               <ul>
-                <li><%= argument.argument_name %> <%= argument.score %></li>
+                <li><%= argument.argument_name %> <%= argument.emoji %></li>
               </ul>
             <% end %>
         </ul>
+      </div>
     <% end %>
-    </div>
+  </div>
+</div>
 
-    <%= simple_form_for [@decision, @option] do |f| %>
-    <%= f.input :option_name, label: 'Add option:', class: "my-awesome-css-class" %>
-    <%= f.submit "Add option", class: "btn btn-primary" %>
+<%= simple_form_for [@decision, @option] do |f| %>
+  <%= f.input :option_name, label: 'Add option:', class: "my-awesome-css-class" %>
+  <%= f.submit "Add option", class: "btn btn-primary" %>
+<% end %>
+
+
+<div class="buttons">
+    <p class="show-buttons"><%= link_to 'Back', decisions_path %></small></p>
+    <p class="show-buttons"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
+  <% if @decision.options.first  %>
+    <p class="show-buttons"><%= link_to 'Next', ask_decision_option_path(@decision, @decision.options.first) %></small></p>
   <% end %>
-
-
-  <div class="buttons">
-      <p class="show-buttons"><%= link_to 'Back', decisions_path %></small></p>
-    <% if @decision.options.first  %>
-      <p class="show-buttons"><%= link_to 'Next', option_path(@decision.options.first) %></small></p>
-    <% end %>
-  </div>
-  <div class="delete-block">
-    <p class="delete-button"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
-  </div>
 </div>
