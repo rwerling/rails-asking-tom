@@ -32,14 +32,15 @@
         <button class="mood-button">😀</button>
       </div>
 
-      <div class="buttons">
-        <%=@next_option%>
-        <p class="show-buttons"><%= link_to 'Back', :back %></p>
-        <p class="show-buttons"><%= link_to 'Next', option_path(@option)%></p>
-      </div>
-    </div>
-  </div>
-    <p class="delete-button"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%></p>
+    <div class="buttons">
+      <p class="show-buttons"><%= link_to 'Back', :back %></small></p>
+      <%# <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %><%#</small></p> %>
+      <%# <p class="show-buttons"><%= link_to 'Next', option_path(@option) %><%#</small></p> %>
+      <% if @next_option %>
+        <p class="show-buttons"><%= link_to 'Next', option_path(@next_option)%></small></p>
+      <% else %>
+        <p class="show-buttons"><%= link_to 'Next', ask_decision_option_path(@option.decision, @options.first) %></small></p>
+      <% end %>
     </div>
   </div>
 </div>
