@@ -2,7 +2,7 @@
   <h2>Step 2
   <br>Pros & Cons</h2>
   <br>
-  <p>What are the positive and negative aspects about <%= @option.option_name %>? <br>How does each aspect make you feel?</p>
+  <p>What are the positives and negatives aspects about <%= @option.option_name %>? <br>How does aspects makes you feel?</p>
 </div>
 <%# <%= link_to 'Make Argument', new_option_argument_path(@option)%>
 
@@ -34,9 +34,9 @@
 
     <div class="buttons">
       <%=@next_option%>
-      <p class="show-buttons"><%= link_to 'Back', :back %></small></p>
-      <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
-      <p class="show-buttons"><%= link_to 'Next', option_path(@option) %></small></p>
+      <%# <p><%= link_to 'Next', option_path(@option) %></p> %>
+      <p class="show-buttons"><%= link_to 'Back to', :back %></small></p>
+      <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
     </div>
   </div>
 </div>
