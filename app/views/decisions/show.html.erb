@@ -12,7 +12,7 @@
         <li> <%= link_to option.option_name, option_path(option) %> </li>
           <% option.arguments.each do |argument| %>
             <ul>
-              <li><%= argument.argument_name %> <%= argument.score %></li>
+              <li><%= argument.argument_name %> <%= argument.emoji %></li>
             </ul>
           <% end %>
       </ul>

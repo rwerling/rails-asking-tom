@@ -4,7 +4,6 @@
   <br>
   <p>What are the positives and negatives aspects about <%= @option.option_name %>? <br>How does aspects makes you feel?</p>
 </div>
-<%# <%= link_to 'Make Argument', new_option_argument_path(@option)%>
 
 <div class="container">
   <div class="content">
@@ -12,29 +11,28 @@
       <div>
         <% @option.arguments.each do |argument| %>
           <ul>
-            <li><%= argument.argument_name %> <%= argument.score %></li>
+            <li><%= argument.argument_name %> <%= argument.emoji %></li>
           </ul>
         <% end %>
     </div>
 
-    <div>
+    <div class="mood-buttons d-flex flex-column" data-controller="mood">
       <%= simple_form_for [@option, @argument] do |f| %>
         <%= f.input :argument_name, label: 'description' %>
-        <%= f.input :score, label: 'score (very negative: -2, very positive +2)' %>
+        <%= f.input :score, as: :hidden, label: 'Choose an emoji to give your score (very negative to very positive)', input_html: { data: { mood_target: 'scoreInput'} } %>
+        <div class="d-flex justify-content-around">
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='-2'>😢</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='-1'>🙁</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='1'>🙂</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>😀</span>
+        </div>
         <%= f.submit "Add argument", class: "btn btn-primary" %>
       <% end %>
     </div>
 
-    <div class="mood-buttons">
-      <button class="mood-button">😢</button>
-      <button class="mood-button">🙁</button>
-      <button class="mood-button">🙂</button>
-      <button class="mood-button">😀</button>
-    </div>
-
     <div class="buttons">
       <%=@next_option%>
-      <%# <p><%= link_to 'Next', option_path(@option) %></p> %>
+      <%# <p><%= link_to 'Next', option_path(@option) %></p>
       <p class="show-buttons"><%= link_to 'Back to', :back %></small></p>
       <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
     </div>

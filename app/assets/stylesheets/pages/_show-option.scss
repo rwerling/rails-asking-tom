@@ -54,6 +54,20 @@
   user-select: none;
 }
 
+.mood-button-selected {
+  opacity: 1;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
 .mood-buttons {
   display: flex;
   -webkit-box-align: center;
