@@ -26,10 +26,13 @@
 <% end %>
 
 
-<div class="buttons">
-    <p class="show-buttons"><%= link_to 'Back', decisions_path %></small></p>
-    <p class="show-buttons"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
-  <% if @decision.options.first  %>
-    <p class="show-buttons"><%= link_to 'Next', ask_decision_option_path(@decision, @decision.options.first) %></small></p>
-  <% end %>
+  <div class="buttons">
+      <p class="show-buttons"><%= link_to 'Back', decisions_path %></small></p>
+    <% if @decision.options.first  %>
+      <p class="show-buttons"><%= link_to 'Next', option_path(@decision.options.first) %></small></p>
+    <% end %>
+  </div>
+  <div class="delete-block">
+    <p class="delete-button"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
+  </div>
 </div>
