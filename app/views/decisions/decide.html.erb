@@ -1,12 +1,17 @@
+<div class="best-decision">
+<h1>Your best Decision!</h1>
+<p>Based on the Pros & Cons between your choices and how you feel! </p>
+</div>
+
 <div class="container">
-  <div>
-    <h1>Your best option is...</h1>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-    <p class="option-name"><%= @winner.option_name %></p>
+  <div class="tom-says">
+    <p> TOM says... </p>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="0.75"  style="width: 300px; height: 300px;"    autoplay></lottie-player>
+    <p class="winner"><%= @winner.option_name %></p>
   </div>
 
-  <div class="mytable bg-mint p-3">
+  <div class="mytable p-3">
     <% @options.each_with_index do | option, index | %>
       <div class="table-row">
         <h3 class="table-item"><%= index + 1 %></h3>
