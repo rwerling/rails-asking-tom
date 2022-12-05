@@ -5,6 +5,11 @@
 
 <div class="option">
   <div class="create-option">
+<%= simple_form_for [@decision, @option] do |f| %>
+  <%= f.input :option_name, label: 'Add option:', class: "my-awesome-css-class" %>
+  <%= f.submit "Add option", class: "btn btn-primary" %>
+<% end %>
+
     <% @decision.options.each do |option| %>
       <div>
         <ul>
@@ -17,22 +22,15 @@
         </ul>
       </div>
     <% end %>
+  <div class="delete-block">
+    <p class="delete-button"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
   </div>
-</div>
-
-<%= simple_form_for [@decision, @option] do |f| %>
-  <%= f.input :option_name, label: 'Add option:', class: "my-awesome-css-class" %>
-  <%= f.submit "Add option", class: "btn btn-primary" %>
-<% end %>
-
-
   <div class="buttons">
       <p class="show-buttons"><%= link_to 'Back', decisions_path %></small></p>
     <% if @decision.options.first  %>
       <p class="show-buttons"><%= link_to 'Next', option_path(@decision.options.first) %></small></p>
     <% end %>
   </div>
-  <div class="delete-block">
-    <p class="delete-button"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
+</div>
   </div>
 </div>
