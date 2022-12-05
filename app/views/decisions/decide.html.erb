@@ -1,8 +1,9 @@
 <div class="container">
   <div class="mytable card">
-    <h1>And The Winner Is !!!</h1>
-    <h2><%= @decision.decision_name %></h2>
-    <p><%= @winner.option_name %></p>
+    <h1>Your best option is...</h1>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    <p class="option-name"><%= @winner.option_name %></p>
   </div>
 
   <div class="mytable bg-mint p-3">
@@ -36,6 +37,5 @@
     </table>
   </div>
 
-
-  <button type="button" class="btn btn-outline-success">Congratulations</button>
+  <%# <button type="button" class="btn btn-outline-success">Congratulations</button> %>
 </div>

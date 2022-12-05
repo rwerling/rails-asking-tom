@@ -82,7 +82,7 @@
   margin-top: 30px;
   width: 92px;
   height: 47px;
-  background: #1F4E84;
+  background: rgba(245, 186, 72, 0.8);
   border-radius: 10px;
   text-align: center;
   padding: 12px 24px;
@@ -95,7 +95,7 @@
   font-size: 19px;
   line-height: 120%;
   text-decoration: none;
-  color: #FFFFFF;
+  color: black;
 }
 
 .buttons {
@@ -103,25 +103,25 @@
   justify-content: space-between;
 }
 
-.delete-button {
-  margin-top: 30px;
-  width: 60%;
-  height: 50px;
-  background: #ffffff49;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.123);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
+// .delete-button {
+//   margin-top: 30px;
+//   // width: 60%;
+//   // height: 50px;
+//   // background: #ffffff49;
+//   // border-radius: 10px;
+//   // border: 1px solid rgba(0, 0, 0, 0.123);
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+// }
 
-.delete-button a {
-  font-family: 'Rubik';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 120%;
-  text-decoration: none;
-  color: #103146;
-}
+// .delete-button a {
+//   // font-family: 'Rubik';
+//   // font-style: normal;
+//   // font-weight: 500;
+//   // font-size: 19px;
+//   // line-height: 120%;
+//   // text-decoration: none;
+//   // color: #103146;
+// }
 

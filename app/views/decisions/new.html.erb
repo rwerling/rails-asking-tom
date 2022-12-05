@@ -6,9 +6,11 @@
   </div>
   
   <div class="create-decision">
+    <div class="create-form">
     <%= simple_form_for [@decision] do |f| %>
       <%= f.input :decision_name %>
-      <%= f.submit "Save new decision", class: "btn btn-primary" %>
+      <%= f.submit "Create", class: "add-button btn btn-primary" %>
     <% end %>
+    </div>
   </div>
 </div>
