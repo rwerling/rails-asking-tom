@@ -31,4 +31,20 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  padding-top: 70px;
+}
+
+.create-form {
+  width: 80%;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.583);
+}
+
+.simple_form {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
 }

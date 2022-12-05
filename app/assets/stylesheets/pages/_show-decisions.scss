@@ -42,3 +42,56 @@
   justify-content: center;
   align-items: center;
 }
+
+.create-option li {
+  display: block;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.create-option li a {
+  text-decoration: none;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.style-card {
+  height: 10%;
+  width: 80%;
+  border: 1px solid #10314662;
+  margin: 30px 30px;
+  padding: 25px 10px 10px 10px ;
+  border-radius: 5px;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.583);
+}
+
+.add-button {
+  width: 98px;
+  height: 47px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+#option_option_name {
+  background-color: rgba(255, 255, 255, 0.583);
+}
+
+.form-label {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
