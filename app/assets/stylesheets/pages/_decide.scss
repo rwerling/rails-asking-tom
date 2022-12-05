@@ -62,12 +62,36 @@ body {
 }
 
 .mytable {
-  width: 85%;
-  margin: 25px auto;
+  width: 100%;
+  margin: auto;
   border: 1px solid rgba(0,0,0,0.175);
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
+  color: #103146
 }
+
+h3 {
+  font-weight: 600;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 50px 200px auto auto;
+  // background-color: aquamarine;
+  justify-items: left;
+  align-items: left;
+}
+
+.table-item {
+  // background-color: rgb(255, 255, 255);
+}
+
+.arguments-table {
+  display: grid;
+  grid-template-columns: 50px 200px auto auto;
+  color: #1f6793;
+}
+
 
 .bg-mint {
   background-color:rgb(182, 222, 236);
