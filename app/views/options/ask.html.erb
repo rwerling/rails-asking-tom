@@ -11,18 +11,33 @@
     <form action='/decisions/<%= @decision.id %>/options/<%= @option.id %>/score'>
         <% @options.each do |option| %>
           <% option.arguments.each do |argument| %>
-          <div class="block">
-            <p>Does <strong><%= @option.option_name %></strong> result in <strong><%= argument.argument_name %></strong>?</p>
-            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="2">
-            <label for="argument<%= argument.id %>"> Yes </label><br>
-            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="0">
-            <label for="argument<%= argument.id %>"> No </label><br>
-            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="1">
-            <label for="argument<%= argument.id %>"> Maybe </label><br>
+            <div class="block">
+              <p>Does <strong><%= @option.option_name %></strong> result in <strong><%= argument.argument_name %></strong>?</p>
+             <div class="d-flex justify-content-around">
+                <div class="tag-item"> 
+                  <input class="tag-selector" type="radio" id="argument<%= argument.id %>-yes" name="argument<%= argument.id %>" value="2">
+                  <label for="argument<%= argument.id %>-yes"> Yes </label><br>
+                </div>
+                <div class="tag-item">
+                  <input class="tag-selector" type="radio" id="argument<%= argument.id %>-no" name="argument<%= argument.id %>" value="0">
+                  <label for="argument<%= argument.id %>-no"> No </label><br>
+                </div>
+                <div class="tag-item">
+                  <input class="tag-selector" type="radio" id="argument<%= argument.id %>-maybe" name="argument<%= argument.id %>" value="1">
+                  <label for="argument<%= argument.id %>-maybe"> Maybe </label><br>
+                </div>
+             </div>
             </div>
           <% end %>
         <% end %>
-      <input type="submit" value="Submit" class="btn btn-primary">
+        <div style="height: 80px">
+        </div>
+      <footer> 
+        <div class="buttons">
+          <p class="show-buttons"><%= link_to 'Back', option_path %></small></p>
+          <input type="submit" value="Next" class="next-button">
+        </div>
+      </footer>
     </form>
   </div>
 </div>
