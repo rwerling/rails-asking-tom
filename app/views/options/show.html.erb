@@ -16,21 +16,19 @@
 
     </div>
 
-    <div class="mood-buttons d-flex flex-column" data-controller="mood">
-    <div class="arguments-field">
-      <%= simple_form_for [@option, @argument] do |f| %>
-        <div class="d-flex add-description">
-          <%= f.input :argument_name, label: 'Description' %>
-          <%= f.submit "Add", class: "add-argument-button btn btn-primary" %>
-        </div>
-        <%= f.input :score, as: :hidden, label: 'How does it make you feel?', input_html: { data: { mood_target: 'scoreInput'} } %>
-        <div class="d-flex justify-content-around">
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='0'>😢</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='1'>🙁</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>🙂</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='3'>😀</span>
-        </div>
-      <% end %>
+    <div class="" data-controller="mood">
+      <div class="w-100 arguments-field">
+        <%= simple_form_for [@option, @argument] do |f| %>
+        <%= f.input :argument_name, label: 'Description',class: "w-100", input_html: {class: "flex-fill w-100"} %>
+          <%= f.input :score, as: :hidden, label: 'How does it make you feel?', input_html: { data: { mood_target: 'scoreInput'} } %>
+          <div class="d-flex justify-content-around mood-buttons">
+            <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='0'>😢</span>
+            <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='1'>🙁</span>
+            <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>🙂</span>
+            <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='3'>😀</span>
+          </div>
+        <%= f.submit "ADD", class: "add-argument-button btn btn-primary w-100" %>
+        <% end %>
       </div>
     </div>
 </div>
