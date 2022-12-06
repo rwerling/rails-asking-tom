@@ -4,10 +4,10 @@ class Argument < ApplicationRecord
 
   def emoji
     case score
-    when 2 then '😀'
-    when 1 then '🙂'
-    when -1 then '🙁'
-    when -2 then '😢'
+    when 3 then '😀'
+    when 2 then '🙂'
+    when 1 then '🙁'
+    when 0 then '😢'
     else
       '❓'
     end

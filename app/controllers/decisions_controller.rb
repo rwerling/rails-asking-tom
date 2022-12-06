@@ -32,6 +32,7 @@ class DecisionsController < ApplicationController
     @decision = Decision.find(params[:id])
     @options = @decision.options.order(score: :desc)
     @winner = @options.first
+    @allscores = @decision.options.sum(:score).to_f
   end
 
   private
