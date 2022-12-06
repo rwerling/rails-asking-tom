@@ -17,14 +17,14 @@
         <h3 class="table-item"><%= index + 1 %></h3>
         <h3 class="table-item"><%= option.option_name %></h3>
         <h3 class="table-item"></h3>
-        <h3 class="table-item"><%= option.score %></h3>
+        <h3 class="table-item"><%= ((option.score / @allscores) * 100).round(1) %>%</h3>
       </div>
       <div class="arguments-table">
         <% option.arguments.each do |argument| %>
           <p></p>
           <p><%= argument.argument_name %></p>
           <p><%= argument.emoji %></p>
-          <p><%= argument.score %></p>
+          <p></p>
         <% end %>
       </div>
     <% end %>
