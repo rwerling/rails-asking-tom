@@ -2,7 +2,7 @@
   <h2>Step 2
   <br>Pros & Cons</h2>
   <br>
-  <p>What are positive or negative aspects about <%= @option.option_name %>? <br>How do they make you feel?</p>
+  <p>What are positive or negative aspects about <strong><%= @option.option_name %></strong>? <br>How do they make you feel?</p>
 </div>
 
 <div class="container">
@@ -19,7 +19,7 @@
     <div class="" data-controller="mood">
       <div class="w-100 arguments-field">
         <%= simple_form_for [@option, @argument] do |f| %>
-        <%= f.input :argument_name, label: 'Description',class: "w-100", input_html: {class: "flex-fill w-100"} %>
+        <%= f.input :argument_name, label: false,class: "w-100", input_html: {class: "flex-fill w-100", value: "too expensive"} %>
           <%= f.input :score, as: :hidden, label: 'How does it make you feel?', input_html: { data: { mood_target: 'scoreInput'} } %>
           <div class="d-flex justify-content-around mood-buttons">
             <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='0'>😢</span>
@@ -27,7 +27,9 @@
             <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>🙂</span>
             <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='3'>😀</span>
           </div>
+          <div id="input-id">
         <%= f.submit "ADD", class: "add-argument-button btn btn-primary w-100" %>
+          </div>
         <% end %>
       </div>
     </div>

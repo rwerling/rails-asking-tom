@@ -15,7 +15,9 @@
     <% end %>
   <%= simple_form_for [@decision, @option] do |f| %>
     <%= f.input :option_name, label: 'Add option:', class: "input-field" %>
-    <%= f.submit "Add", class: "add-button btn btn-primary" %>
+    <div id="input-id">
+      <%= f.submit "Add", class: "add-button btn btn-primary" %>
+    </div>
   <% end %>
 <p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
 </div>
@@ -23,7 +25,7 @@
 </div>
 <div style="height: 80px">
 </div>
-<footer> 
+<footer>
 <div class="buttons">
     <p class="show-buttons"><%= link_to 'Back', new_decision_path %></small></p>
   <% if @decision.options.first %>
