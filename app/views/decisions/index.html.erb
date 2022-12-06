@@ -6,8 +6,11 @@
     <div class="add-decision">
   <div class="decision">
     <% @decisions.reverse_each do |decision| %>
-    <p><%= link_to decision.decision_name, decision_path(decision) %></p>
+    <p><%= link_to decision.decision_name, decide_decision_path(decision) %></p>
     <% end %>
   </div>
   </div>
 </div>
+
+<%# decide_decision_path(@decision)
+http://localhost:3000/decisions/18/decide %>
