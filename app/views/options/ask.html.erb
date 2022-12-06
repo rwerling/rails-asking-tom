@@ -13,16 +13,16 @@
           <% option.arguments.each do |argument| %>
           <div class="block">
             <p>Does <strong><%= @option.option_name %></strong> result in <strong><%= argument.argument_name %></strong>?</p>
-            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="1">
+            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="2">
             <label for="argument<%= argument.id %>"> Yes </label><br>
-            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="-1">
-            <label for="argument<%= argument.id %>"> No </label><br>
             <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="0">
+            <label for="argument<%= argument.id %>"> No </label><br>
+            <input type="checkbox" id="argument<%= argument.id %>" name="argument<%= argument.id %>" value="1">
             <label for="argument<%= argument.id %>"> Maybe </label><br>
             </div>
           <% end %>
         <% end %>
       <input type="submit" value="Submit" class="btn btn-primary">
     </form>
-  </div> 
+  </div>
 </div>

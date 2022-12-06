@@ -13,7 +13,7 @@
             <li><%= argument.argument_name %> <%= argument.emoji %></li>
           </ul>
         <% end %>
-      
+
     </div>
 
     <div class="mood-buttons d-flex flex-column" data-controller="mood">
@@ -22,10 +22,10 @@
         <%= f.input :argument_name, label: 'Description' %>
         <%= f.input :score, as: :hidden, label: 'How does it make you feel?', input_html: { data: { mood_target: 'scoreInput'} } %>
         <div class="d-flex justify-content-around">
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='-2'>😢</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='-1'>🙁</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='1'>🙂</span>
-          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>😀</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='0'>😢</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='1'>🙁</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='2'>🙂</span>
+          <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='3'>😀</span>
         </div>
         <%= f.submit "Add", class: "add-argument-button btn btn-primary" %>
       <% end %>
@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<footer> 
+<footer>
   <div class="buttons">
     <p class="show-buttons"><%= link_to 'Back', :back %></small></p>
     <%# <p class="show-buttons"><%= link_to 'Delete Option', option_path(@option), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %><%#</small></p> %>
@@ -44,4 +44,4 @@
       <p class="show-buttons"><%= link_to 'Next', ask_decision_option_path(@option.decision, @options.first) %></small></p>
     <% end %>
   </div>
-</footer> 
+</footer>
