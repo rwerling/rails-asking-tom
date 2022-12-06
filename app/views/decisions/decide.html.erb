@@ -3,11 +3,12 @@
 <p>Based on the Pros & Cons between your choices and how you feel! </p>
 </div>
 
-<div class="container">
+<div class="decide">
   <%# <div class="tom-says"> %>
     <p class="tom-says"> TOM says... </p>
+    <p class="party-face">🥳</p>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="0.50"  style="width: 100%; height: 400px;"    autoplay></lottie-player>
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="0.50"  style="width: 100%; height: 400px; top: -180px;"  autoplay class="confetti"></lottie-player>
     <p class="winner"><%= @winner.option_name %></p>
   <%# </div> %>
 
@@ -19,14 +20,7 @@
         <h3 class="table-item"></h3>
         <h3 class="table-item"><%= ((option.score / @allscores) * 100).round(1) %>%</h3>
       </div>
-      <div class="arguments-table">
-        <% option.arguments.each do |argument| %>
-          <p></p>
-          <p><%= argument.argument_name %></p>
-          <p><%= argument.emoji %></p>
-          <p></p>
-        <% end %>
-      </div>
+      <%# pros and cons were here %>
     <% end %>
   </div>
 
