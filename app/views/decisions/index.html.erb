@@ -1,14 +1,13 @@
   <div class="step-info">
     <p class="step-choices">
-    What’s going on? <br></p>
-    <p>What is the desicion that needs to be made?</p>
+    Here are decisions you've already created! <br></p>
+    <p>Click on one to see more.</p>
   </div>
     <div class="add-decision">
   <div class="decision">
     <% @decisions.reverse_each do |decision| %>
     <p><%= link_to decision.decision_name, decision_path(decision) %></p>
     <% end %>
-    <%= link_to "Create new Decision", new_decision_path, class: 'btn btn-primary' %>
   </div>
   </div>
 </div>
