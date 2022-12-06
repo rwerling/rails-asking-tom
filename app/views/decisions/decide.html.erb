@@ -4,12 +4,12 @@
 </div>
 
 <div class="container">
-  <div class="tom-says">
-    <p> TOM says... </p>
+  <%# <div class="tom-says"> %>
+    <p class="tom-says"> TOM says... </p>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="0.75"  style="width: 300px; height: 300px;"    autoplay></lottie-player>
+    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_wys2rrr6.json"  background="transparent"  speed="0.50"  style="width: 100%; height: 400px;"    autoplay></lottie-player>
     <p class="winner"><%= @winner.option_name %></p>
-  </div>
+  <%# </div> %>
 
   <div class="mytable p-3">
     <% @options.each_with_index do | option, index | %>

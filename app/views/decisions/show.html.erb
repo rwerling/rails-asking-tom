@@ -17,10 +17,10 @@
     <%= f.input :option_name, label: 'Add option:', class: "input-field" %>
     <%= f.submit "Add", class: "add-button btn btn-primary" %>
   <% end %>
+<p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
 </div>
   </div>
 </div>
-
 <div style="height: 60px">
 </div>
 <footer> 
@@ -30,5 +30,4 @@
     <p class="show-buttons"><%= link_to 'Next', option_path(@decision.options.first) %></small></p>
   <% end %>
 </div>
-
 </footer>
