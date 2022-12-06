@@ -13,7 +13,7 @@ class OptionsController < ApplicationController
     @option = Option.new(option_params)
     @option.decision = @decision
     if @option.save
-      redirect_to decision_path(@decision)
+      redirect_to decision_path(@decision, anchor: 'new_option')
     else
       render :new, status: :unprocessable_entity
     end
