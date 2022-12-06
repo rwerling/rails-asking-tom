@@ -6,11 +6,14 @@ body {
 .welcome-block {
   margin: 278px 39px;
   width: 296px;
-  height: 196px;
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .ask-button {
-  margin: 180px 0 0 90px;
+  margin: 270px 0 0 90px;
   width: 133px;
   height: 48px;
   background: #103146;
@@ -23,7 +26,7 @@ body {
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 120%;
   text-decoration: none;
   color: #FFFFFF;
