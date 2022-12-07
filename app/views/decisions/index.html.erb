@@ -1,16 +1,19 @@
   <div class="step-info">
-    <p class="step-choices">
-    Here are decisions you've already created! <br></p>
+    <p class="step-choices">Review your previous decisions. <br></p>
     <p>Click on one to see more.</p>
   </div>
-    <div class="add-decision">
-  <div class="decision" onclick="this.querySelector('a').click(); return true;">
-    <% @decisions.reverse_each do |decision| %>
-    <p><%= link_to decision.decision_name, decide_decision_path(decision) %></p>
-    <% end %>
+
+  <div class="add-decision">
+    <div class="decision" onclick="this.querySelector('a').click(); return true;">
+      <% @decisions.reverse_each do |decision| %>
+      <div class="decisions-container">
+        <div class="decision-style-card">
+          <p><%= link_to decision.decision_name, decide_decision_path(decision) %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-  </div>
-</div>
 
 <%# decide_decision_path(@decision)
 http://localhost:3000/decisions/18/decide %>

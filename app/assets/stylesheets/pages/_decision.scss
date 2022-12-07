@@ -41,15 +41,15 @@ body {
   padding-top: 70px;
 }
 
-.decision p {
-  width: 90%;
-  height: 10%;
-  text-align: center;
-  border: 1px solid #10314662;
-  background-color: rgba(255, 255, 255, 0.583);
-  padding: 10px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
-}
+// .decision p {
+//   width: 90%;
+//   height: 10%;
+//   text-align: center;
+//   border: 1px solid #10314662;
+//   background-color: rgba(255, 255, 255, 0.583);
+//   padding: 10px;
+//   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+// }
 
 .decision p a {
   font-family: 'Rubik';
@@ -61,4 +61,20 @@ body {
 
 .decision p a:hover {
   color: blue;
+}
+
+.decisions-container {
+  width: 80%;
+}
+
+.decision-style-card {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 19px;
+  text-align: center;
+  background: #1f4e8449;
+  padding: 10px;
+  margin-bottom: 10px;
+  // border: 1px solid rgba(245, 187, 72, 0.429);
 }
