@@ -8,9 +8,9 @@
   </label>
 
   <ul class="menubox">
-          <li class="menuitem"> <%= link_to "My decisions", decisions_path %> </li>
-          <li class="menuitem"> <%= link_to "New decision", new_decision_path %> </li>
-          <li class="menuitem"> <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %> </li>
-          <li class="menuitem"> <%= link_to "Login", new_user_session_path %> </li>
+          <li class="menuitem" onclick="this.querySelector('a').click(); return true;"> <%= link_to "My decisions", decisions_path %> </li>
+          <li class="menuitem" onclick="this.querySelector('a').click(); return true;"> <%= link_to "New decision", new_decision_path %> </li>
+          <li class="menuitem" onclick="this.querySelector('a').click(); return true;"> <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %> </li>
+          <li class="menuitem" onclick="this.querySelector('a').click(); return true;"> <%= link_to "Login", new_user_session_path %> </li>
   </ul>
 </div>
