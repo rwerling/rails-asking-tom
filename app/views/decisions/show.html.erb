@@ -1,21 +1,18 @@
 <div class="step-options">
   <h2>Step 1 <br>Options</h2>
-  <p>What are you deciding between? Please add min 2 options </p>
+  <p>What are you deciding between? Please add min<br>two options. </p>
 </div>
 
-<div class="option">
+<div class="option" >
   <div class="create-option">
-
-    <% @decision.options.each do |option| %>
-      <div class="style-card">
-        <ul style='padding: 0'>
-          <li> <%= option.option_name %> </li>
-        </ul>
-      </div>
-    <% end %>
-  <%= simple_form_for [@decision, @option] do |f| %>
+    <div class="options">
+      <% @decision.options.each do |option| %>
+      <%= render "option", option: option %>
+      <% end %>
+    </div>
+  <%= simple_form_for [@decision, @option], data: { controller: "option" } do |f| %>
     <%= f.input :option_name, label: 'Add option:', class: "input-field" %>
-    <div id="input-id">
+    <div id="option-input">
       <%= f.submit "Add", class: "add-button btn btn-primary" %>
     </div>
   <% end %>
@@ -28,7 +25,7 @@
 <footer>
 <div class="buttons">
     <p class="show-buttons"><%= link_to 'Back', new_decision_path %></small></p>
-  <% if @decision.options.first %>
+  <% if @decision.options.count > 1 %>
     <p class="show-buttons"><%= link_to 'Next', option_path(@decision.options.first) %></small></p>
   <% end %>
 </div>
