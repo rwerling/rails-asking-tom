@@ -24,8 +24,13 @@
         <%# pros and cons were here %>
       <% end %>
     </div>
-
-    <p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
-    <%# <button type="button" class="btn btn-outline-success">Congratulations</button> %>
+    <div class="buttons-on-decide">
+      <p class="not-button-decide">Share</p>
+      <p class="button-decide"><%= link_to "My decisions", decisions_path %> </p>
+      <br>
+      <br>
+      <p class="button-decide-delete"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
+      <%# <button type="button" class="btn btn-outline-success">Congratulations</button> %>
+    </div>
   </div>
 </div>
