@@ -59,18 +59,15 @@
 }
 
 .style-card {
-  height: 10%;
-  width: 80%;
-  border: 1px solid #10314662;
-  margin: 30px 30px;
-  padding: 25px 10px 10px 10px ;
+  height: 45px;
+  width: 100%;
   border-radius: 5px;
   font-size: 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.583);
+  background: rgba(245, 187, 72, 0.254);
+  padding: 10px;
+  margin-bottom: 30px;
+  // border: 1px solid rgba(245, 187, 72, 0.429);
 }
 
 .add-button {
@@ -96,3 +93,13 @@
   font-weight: 400;
   font-size: 16px;
 }
+
+// .options {
+//   width: 90%;
+//   height: 10%;
+//   text-align: center;
+//   border: 1px solid #10314662;
+//   background-color: rgba(255, 255, 255, 0.583);
+//   padding: 10px;
+//   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+// }
