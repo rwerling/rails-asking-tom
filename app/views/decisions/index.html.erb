@@ -4,7 +4,7 @@
     <p>Click on one to see more.</p>
   </div>
     <div class="add-decision">
-  <div class="decision">
+  <div class="decision" onclick="this.querySelector('a').click(); return true;">
     <% @decisions.reverse_each do |decision| %>
     <p><%= link_to decision.decision_name, decide_decision_path(decision) %></p>
     <% end %>
