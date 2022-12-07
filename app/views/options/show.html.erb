@@ -19,7 +19,7 @@
     <div class="" data-controller="mood">
       <div class="w-100 arguments-field">
         <%= simple_form_for [@option, @argument], html: { data: {option_target: "form", action: "submit->option#create"}} do |f| %>
-        <%= f.input :argument_name, label: false,class: "w-100", input_html: {class: "flex-fill w-100", placeholder: "add argument"} %>
+        <%= f.input :argument_name, label: false,class: "w-100", input_html: {class: "flex-fill w-100", placeholder: "argument"} %>
           <%= f.input :score, as: :hidden, label: false, input_html: { data: { mood_target: 'scoreInput'} } %>
           <div class="d-flex justify-content-around mood-buttons">
             <span class="mood-button" data-action="click->mood#select" data-mood-target='emoji' data-score-value='0'>😢</span>

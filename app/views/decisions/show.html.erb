@@ -6,13 +6,12 @@
 <div class="option" >
   <div class="create-option">
     <div class="options">
-      <h5><%= @decision.decision_name  %></h5>
       <% @decision.options.each do |option| %>
       <%= render "option", option: option %>
       <% end %>
     </div>
-  <%= simple_form_for [@decision, @option], data: { controller: "option" } do |f| %>
-    <%= f.input :option_name, label: 'Add option:', class: "input-field" %>
+  <%= simple_form_for [@decision, @option], data: { controller: "option"} do |f| %>
+    <%= f.input :option_name, label: false, class: "input-field", input_html: {placeholder: "Your option"} %>
     <div id="option-input">
       <%= f.submit "Add option", class: "add-button btn btn-primary" %>
     </div>
