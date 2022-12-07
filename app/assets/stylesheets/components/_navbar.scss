@@ -62,10 +62,14 @@
 }
 
 .menuitem {
-  background: rgba(0, 0, 0, 0.064);
+  // background: rgba(0, 0, 0, 0.064);
+  // background-color:rgba(197, 228, 240, 0.326);
+  background-color: rgba(245, 187, 72, 0.273);
   text-align: center;
   padding: 12px 24px;
-  margin-top: 30px;
+  margin: 30px 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(245, 187, 72);
 }
 
 .menu-item {
