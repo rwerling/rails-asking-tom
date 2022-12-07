@@ -37,7 +37,7 @@
   height: 20%;
   width: 80%;
   // border: 1px solid #10314662;
-  margin: 30px 30px;
+  margin: 30px 30px 30px 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(202, 202, 202);
   // background-color: rgba(255, 255, 255, 0.583);
@@ -46,6 +46,7 @@
 .block p {
   font-family: 'Rubik';
   font-style: normal;
+  font-size: 19px;
 }
 
 .next-button {
@@ -66,11 +67,6 @@
   border: none;
 }
 
-.checkboxes {
-  // display: flex;
-  // justify-content: space-between;
-}
-
 .tag-item {
   display: inline-block;
 }
@@ -86,11 +82,11 @@
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 120%;
   border-radius: 50rem;
-  padding: 12px 24px;
-  background: #85b4dd7d;
+  padding: 16px 28px;
+  background: #85b4dd59;
   color: black;
   border: 1px solid #85B4DD;
   margin-right: 0.6rem;
