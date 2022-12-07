@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MoodController from "./mood_controller"
 application.register("mood", MoodController)
+
+import OptionController from "./option_controller"
+application.register("option", OptionController)

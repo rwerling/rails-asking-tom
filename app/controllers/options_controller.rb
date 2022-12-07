@@ -13,7 +13,10 @@ class OptionsController < ApplicationController
     @option = Option.new(option_params)
     @option.decision = @decision
     if @option.save
-      redirect_to decision_path(@decision, anchor: 'new_option')
+      respond_to do |format|
+        format.html { redirect_to decision_path(@decision) }
+        format.text { render partial: "decisions/option", locals: { option: @option }, formats: [:html] }
+      end
     else
       render :new, status: :unprocessable_entity
     end
