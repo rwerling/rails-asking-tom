@@ -6,6 +6,7 @@
 <div class="option" >
   <div class="create-option">
     <div class="options">
+      <h5><%= @decision.decision_name  %></h5>
       <% @decision.options.each do |option| %>
       <%= render "option", option: option %>
       <% end %>
@@ -13,7 +14,7 @@
   <%= simple_form_for [@decision, @option], data: { controller: "option" } do |f| %>
     <%= f.input :option_name, label: 'Add option:', class: "input-field" %>
     <div id="option-input">
-      <%= f.submit "Add", class: "add-button btn btn-primary" %>
+      <%= f.submit "Add option", class: "add-button btn btn-primary" %>
     </div>
   <% end %>
 <p><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>

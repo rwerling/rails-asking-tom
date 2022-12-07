@@ -1,15 +1,15 @@
 <div class="decision-page">
   <div class="decision-text-block">
     <p class="decision-title">
-    What’s going on? <br></p>
+    What is<br>going on? <br></p>
     <p class="decision-text">What is the desicion that needs to be made?</p>
   </div>
-  
+
   <div class="create-decision">
     <div class="create-form">
     <%= simple_form_for [@decision] do |f| %>
       <%= f.input :decision_name %>
-      <%= f.submit "Create", class: "add-button btn btn-primary" %>
+      <%= f.submit "Create new decision", class: "add-button btn btn-primary" %>
     <% end %>
     </div>
   </div>
