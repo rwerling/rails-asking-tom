@@ -1,5 +1,5 @@
-meta_product_name: "Ask Tom"
-meta_title: "Ask Tom - Better desicions 3 steps away."
-meta_description: "How make better desicions without mental fatige"
-meta_image: "Logo.png" # should exist in `app/assets/images/`
+meta_name: "Ask Tom"
+meta_title: "Ask Tom - Better desicions just 3 steps away."
+meta_description: "Making better desicions without mental fatigue"
+meta_image: "ask_tom_logo.png" # should exist in `app/assets/images/`
 twitter_account: "@AskTom"   # required for Twitter Cards
