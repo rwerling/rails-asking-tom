@@ -24,8 +24,8 @@
       <% end %>
     </div>
     <div class="buttons-on-decide">
-      <p class="not-button-decide">Share this decision</p>
       <p class="button-decide"><%= link_to "View all my decisions", decisions_path %> </p>
+      <p class="not-button-decide">Share this decision</p>
       <br>
       <br>
       <p class="button-decide-delete"><%= link_to 'Delete Decision', decision_path(@decision), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-button text-danger' %></small></p>
