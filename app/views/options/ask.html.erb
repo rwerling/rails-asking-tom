@@ -12,7 +12,7 @@
         <% @options.each do |option| %>
           <% option.arguments.each do |argument| %>
             <div class="block">
-              <p>Does <strong><%= @option.option_name %></strong> result in <strong><%= argument.argument_name %></strong>?</p>
+              <p>Does <strong><%= @option.option_name %></strong> result in <strong><%= argument.argument_name %></strong>&nbsp;?</p>
              <div class="d-flex justify-content-around">
                 <div class="tag-item">
                   <input class="tag-selector" type="radio" id="argument<%= argument.id %>-yes" name="argument<%= argument.id %>" value="2">
